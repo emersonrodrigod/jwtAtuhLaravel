@@ -6,12 +6,14 @@ export default [
     {
         path: '/login',
         name: 'login',
-        component: LoginComponent
+        component: LoginComponent,
+        meta:{auth: false}
     },
     {
         path: '/',
         name: 'app',
-        component: App
+        component: App,
+        meta:{auth: true}
     }
 ];
 
