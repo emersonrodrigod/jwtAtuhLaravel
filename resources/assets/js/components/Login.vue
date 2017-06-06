@@ -33,10 +33,7 @@
 
 <script>
     import Vue from 'vue';
-    import VueResource from 'vue-resource';
     import SessionStorage from '../services/session-storage';
-
-    Vue.use(VueResource);
 
     export default {
         data(){

@@ -2,14 +2,14 @@
 require('./bootstrap');
 
 import Vue from 'vue';
-import router from './routes/router';
+import VueResource from 'vue-resource';
 
-import ExampleComponent from './components/Example.vue';
+Vue.use(VueResource);
+require('./services/interceptor');
+
+import router from './routes/router';
 
 const app = new Vue({
     router,
-    el: '#app',
-    components: {
-        'example': ExampleComponent,
-    }
+    el: '#app'
 });

@@ -23,6 +23,6 @@ export default {
     },
 
     getAuthorizationHeader(){
-        return 'Bearer' + this.get('token');
+        return 'Bearer ' + this.get('token');
     }
 };

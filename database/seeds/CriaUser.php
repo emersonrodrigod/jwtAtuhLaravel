@@ -12,10 +12,12 @@ class CriaUser extends Seeder
      */
     public function run()
     {
-        User::create([
+        /*User::create([
             'name' => 'Emerson',
             'email' => 'emersonrodrigod@gmail.com',
             'password' => bcrypt('123456')
-        ]);
+        ]);*/
+
+        factory(App\User::class, 50)->create();
     }
 }
