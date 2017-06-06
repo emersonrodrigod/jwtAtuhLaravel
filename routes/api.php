@@ -17,14 +17,18 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('login','AuthController@login');
+Route::group(['middleware' => 'cors'], function(){
+    Route::post('login','AuthController@login');
 
-Route::group(['middleware' => 'jwt.auth'], function(){
+    Route::group(['middleware' => 'jwt.auth'], function(){
 
-    route::get('/users',function(){
+        route::get('/users',function(){
 
-        $users = \App\User::all();
-        return response()->json(compact('users'));
+            $users = \App\User::all();
+            return response()->json(compact('users'));
+        });
+
     });
 
 });
+
